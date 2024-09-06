@@ -1,4 +1,4 @@
-name: Unit Tests
+name: Unit Test
 
 on:
   push:
@@ -116,3 +116,4 @@ jobs:
           registry: gcr.io
           repository: ${{ secrets.GKE_PROJECT }}/${{ env.GITHUB_REPOSITORY_NAME_PART_SLUG_URL }}
           tags: ${{ env.GITHUB_SHA_SHORT }}
+          
