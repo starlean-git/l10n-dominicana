@@ -1,5 +1,5 @@
 {
-    "name": "Fiscal Accounting (Rep. Dominicana)",
+    "name": "Fiscal Accounting (Rep. Dominicana.)",
     "summary": """
         Este módulo implementa la administración y gestión de los números de
          comprobantes fiscales para el cumplimento de la norma 06-18 de la
