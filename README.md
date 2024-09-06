@@ -1,5 +1,5 @@
 [![License: AGPL-3](https://img.shields.io/badge/licence-LGPL--3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0.html)
-![Linting](https://github.com/indexa-git/l10n-dominicana/workflows/Linting/badge.svg)
+[![Linting](https://github.com/starlean-git/l10n-dominicana/actions/workflows/linting.yaml/badge.svg?branch=17.0)](https://github.com/starlean-git/l10n-dominicana/actions/workflows/linting.yaml)
 ![Unit Tests](https://github.com/indexa-git/l10n-dominicana/workflows/Unit%20Tests/badge.svg)
 ![GitHub Sponsor](https://img.shields.io/github/sponsors/indexa-git?label=Sponsor&logo=GitHub)
 
