@@ -51,7 +51,7 @@ jobs:
           path: ${{ env.GITHUB_REPOSITORY_SLUG_URL }}
 
       - name: Download python addons script
-        run: curl https://raw.githubusercontent.com/starlean-git/dockerdoo/${{ env.GITHUB_BASE_REF_SLUG || env.GITHUB_REF_SLUG }}/resources/getaddons.py -o getaddons.py
+        run: curl https://raw.githubusercontent.com/iterativo-git/dockerdoo/${{ env.GITHUB_BASE_REF_SLUG || env.GITHUB_REF_SLUG }}/resources/getaddons.py -o getaddons.py
 
       - name: Select Odoo modules to install
         id: get_modules
