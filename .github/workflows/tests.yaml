@@ -59,14 +59,12 @@ jobs:
           output=$(python -c "from getaddons import get_modules; print(','.join(get_modules('$GITHUB_WORKSPACE/${{ env.GITHUB_REPOSITORY_SLUG_URL }}', depth=3)))")
           echo $output
           echo "::set-output name=modules::$output"
+          
       - name: Set test all tag
         if: ${{ github.event.label.name == 'test all' }}
         run: |
           echo "WITHOUT_TEST_TAGS=1" >> $GITHUB_ENV
-          
-      - name: Authenticate Docker with GCR
-        run: gcloud auth configure-docker gcr.io
-        
+      
       - name: Run Odoo tests
         run: |
           docker pull gcr.io/starlean-odoo/dockerdoo:${{ env.GITHUB_BASE_REF_SLUG || env.GITHUB_REF_SLUG }}
