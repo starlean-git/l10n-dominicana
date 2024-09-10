@@ -63,6 +63,10 @@ jobs:
         if: ${{ github.event.label.name == 'test all' }}
         run: |
           echo "WITHOUT_TEST_TAGS=1" >> $GITHUB_ENV
+          
+      - name: Authenticate Docker with GCR
+        run: gcloud auth configure-docker gcr.io
+        
       - name: Run Odoo tests
         run: |
           docker pull gcr.io/starlean-odoo/dockerdoo:${{ env.GITHUB_BASE_REF_SLUG || env.GITHUB_REF_SLUG }}
