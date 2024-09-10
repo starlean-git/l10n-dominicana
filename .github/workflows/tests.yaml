@@ -46,7 +46,7 @@ jobs:
         uses: rlespinasse/github-slug-action@v4.x
 
       - name: INDEXA ${{ env.GITHUB_REPOSITORY_NAME_PART_SLUG_URL }}
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: ${{ env.GITHUB_REPOSITORY_SLUG_URL }}
 
@@ -83,7 +83,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y zip && zip -r modules.zip .
 
       - name: Upload repository results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: modules
           path: modules.zip
@@ -97,7 +97,7 @@ jobs:
 
     steps:
       - name: Download repository results
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v4.1.8
         with:
           name: modules
 
@@ -107,7 +107,7 @@ jobs:
         uses: rlespinasse/github-slug-action@v4.x
 
       - name: Push to Google Cloud Registry
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action@v6
         with:
           dockerfile: ${{ env.GITHUB_REPOSITORY_SLUG_URL }}/Dockerfile
           cache_froms: docker.pkg.github.com/${{ github.repository }}/${{ env.GITHUB_REPOSITORY_NAME_PART_SLUG_URL }}:${{ env.GITHUB_HEAD_REF_SLUG_URL }}
